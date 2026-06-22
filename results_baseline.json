@@ -1,0 +1,13 @@
+{
+  "config": {
+    "retrieval": "naive_dense",
+    "embed_model": "all-MiniLM-L6-v2",
+    "gen_model": "gemini-2.5-flash-lite",
+    "top_k": 4
+  },
+  "n_scored": 6,
+  "faithfulness": 1.0,
+  "answer_relevancy": 1.0,
+  "context_precision": 0.625,
+  "abstention_accuracy": 1.0
+}

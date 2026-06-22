@@ -1,0 +1,18 @@
+[
+  {
+    "config": "naive_dense",
+    "n_scored": 3,
+    "faithfulness": 0.933,
+    "answer_relevancy": 0.967,
+    "context_precision": 0.25,
+    "abstention_accuracy": 1.0
+  },
+  {
+    "config": "reranked",
+    "n_scored": 6,
+    "faithfulness": 0.95,
+    "answer_relevancy": 0.975,
+    "context_precision": 0.375,
+    "abstention_accuracy": 1.0
+  }
+]

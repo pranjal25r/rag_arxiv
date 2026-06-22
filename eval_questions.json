@@ -1,0 +1,13 @@
+[
+  {"question": "What is classifier-free guidance in diffusion models?", "type": "in_domain"},
+  {"question": "How does DDIM sampling differ from DDPM sampling?", "type": "in_domain"},
+  {"question": "What role does the VAE play in latent diffusion models?", "type": "in_domain"},
+  {"question": "What does the Diffusion Transformer (DiT) architecture replace?", "type": "in_domain"},
+  {"question": "What is score-based generative modeling?", "type": "in_domain"},
+  {"question": "Why is latent-space diffusion more efficient than pixel-space diffusion?", "type": "in_domain"},
+  {"question": "What problem with classifier guidance does classifier-free guidance address?", "type": "in_domain"},
+  {"question": "What is the forward noising process in a diffusion model?", "type": "in_domain"},
+  {"question": "What is the capital of France?", "type": "out_domain"},
+  {"question": "How do I bake sourdough bread?", "type": "out_domain"},
+  {"question": "What is the time complexity of quicksort?", "type": "out_domain"}
+]

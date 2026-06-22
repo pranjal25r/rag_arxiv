@@ -1,8 +1,6 @@
-# VeritasRAG — Evaluation-Driven RAG over Diffusion-Model Papers
+# Citera — Evaluation-Driven RAG over Diffusion-Model Papers
 
-A retrieval-augmented question-answering system over **~280 arXiv papers on diffusion models**, built to *measure and improve* retrieval quality rather than just ship a chatbot. Every answer is grounded in retrieved papers and cited; the system **abstains when it lacks evidence** instead of hallucinating; and retrieval strategies are **benchmarked with an LLM-as-judge harness**.
-
-> Rename freely — `VeritasRAG` is a suggestion. Also replace the `~280` corpus count below with your actual number from `data/papers.json`.
+A retrieval-augmented question-answering system over **~304 arXiv papers on diffusion models**, built to *measure and improve* retrieval quality rather than just ship a chatbot. Every answer is grounded in retrieved papers and cited; the system **abstains when it lacks evidence** instead of hallucinating; and retrieval strategies are **benchmarked with an LLM-as-judge harness**.
 
 ---
 
@@ -41,13 +39,13 @@ question ──► embed ──► retrieve top-k ──►(optional cross-encod
 
 ## Key findings
 
-**1. Reranking's value depends on retrieval noise.** On an initial small (~100-paper), tightly on-topic corpus, reranking made almost no difference (context precision 0.45 → 0.46) — dense retrieval already surfaced the few relevant papers, leaving nothing to reorder. Only after scaling the corpus to ~280 papers, which introduced realistic near-miss noise, did reranking demonstrate clear value (0.25 → 0.375). The lesson: a reranker earns its keep when the first-stage retriever makes ranking errors, which happens in larger, noisier corpora — not in toy ones.
+**1. Reranking's value depends on retrieval noise.** On an initial small (~100-paper), tightly on-topic corpus, reranking made almost no difference (context precision 0.45 → 0.46) — dense retrieval already surfaced the few relevant papers, leaving nothing to reorder. Only after scaling the corpus to ~304 papers, which introduced realistic near-miss noise, did reranking demonstrate clear value (0.25 → 0.375). The lesson: a reranker earns its keep when the first-stage retriever makes ranking errors, which happens in larger, noisier corpora — not in toy ones.
 
 **2. Better retrieval improves answer faithfulness.** Cleaner context from reranking didn't just raise precision — it lifted faithfulness (0.933 → 0.950), because the generator had fewer irrelevant chunks to be misled by.
 
 **3. The system stays reliable under imperfect retrieval.** Even at a modest 0.375 context precision, faithfulness held at 0.95 and abstention at 100%. Grounding constraints plus abstention make the system robust to noisy retrieval rather than brittle.
 
-**On absolute numbers:** context precision is capped low here because each question has only ~1–2 truly relevant papers in a ~280-paper corpus, so precision@4 can't exceed ~0.25–0.5 by construction. The *improvement* from reranking is the headline, not the absolute value.
+**On absolute numbers:** context precision is capped low here because each question has only ~1–2 truly relevant papers in a ~304-paper corpus, so precision@4 can't exceed ~0.25–0.5 by construction. The *improvement* from reranking is the headline, not the absolute value.
 
 ---
 
